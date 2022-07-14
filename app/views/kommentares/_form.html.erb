@@ -1,0 +1,32 @@
+<%= form_with(model: kommentare) do |form| %>
+  <% if kommentare.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(kommentare.errors.count, "error") %> prohibited this kommentare from being saved:</h2>
+
+      <ul>
+        <% kommentare.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :posts_id, style: "display: block" %>
+    <%= form.text_field :posts_id %>
+  </div>
+
+  <div>
+    <%= form.label :zeit, style: "display: block" %>
+    <%= form.datetime_field :zeit %>
+  </div>
+
+  <div>
+    <%= form.label :text, style: "display: block" %>
+    <%= form.text_field :text %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

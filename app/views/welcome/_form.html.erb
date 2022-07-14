@@ -1,0 +1,22 @@
+<%= form_with(model: commentar) do |form| %>
+  
+    <div>
+      <%= form.label :artikel_id, style: "display: block" %>
+      <%= form.number_field :artikel_id,id: :commentar_artikel_id, value:artikel_id %>
+    </div>
+  
+    <div>
+      <%= form.label :zeit, style: "display: block" %>
+      <%= form.datetime_field :zeit, value:Time.now.strftime("%Y-%d-%m %H:%M:%S %Z") %>
+    </div>
+  
+    <div>
+      <%= form.label :text, style: "display: block" %>
+      <%= form.text_field :text %>
+    </div>
+  
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+  

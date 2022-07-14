@@ -1,0 +1,28 @@
+<div class="scott_outline">
+    <div class="scott_header text-center">
+        <h1>Scotts Blog</h1>
+    </div>
+    <% @artikels.each do |artikel| %>
+        <div class="scott_blog_artikel_kommentar">
+            <div>
+                <div class="scott_blog_artikel_edit text-right">
+                    <%= link_to "Bearbeiten / Entfernen", artikel, class:"float-right scott_btn" %>
+                </div>
+                    <h2 class="scott_blog_titel"><%= artikel.titel %></h2>
+                    <p class="scott_blog_text"><%= artikel.text %></p>
+                </div>
+
+                <% Artikel.find(artikel.id).commentars.each do |kommentar| %>
+                <div>
+                    <p class="scott_blog_kommentar_Zeit"><%= kommentar.zeit %></p>
+                    <p class="scott_blog_kommentar_text"><%= kommentar.text %></p>
+                </div>
+                <% end %>
+
+                <div>
+                    <%= link_to "Kommentar hinzufügen", new_commentar_path(@artikel_id,:artikel_id => artikel.id), class:"btn btn-info scott_kommentar_add" %>
+                </div>
+            </div>
+    <% end %>
+    <%= link_to "Neuen Post erstellen", new_artikel_path, class:"btn btn-info scott_new_post" %>
+</div>

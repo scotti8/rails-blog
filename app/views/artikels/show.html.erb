@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @artikel %>
+
+<div>
+  <%= link_to "Post bearbeiten", edit_artikel_path(@artikel) %> |
+  <%= link_to "Hauptseite", root_path %>
+
+  <%= button_to "Post zerstören", @artikel, method: :delete %>
+</div>
+<% # <p> Kommentare <p> %>
+<% # render @artikel_commentars %>

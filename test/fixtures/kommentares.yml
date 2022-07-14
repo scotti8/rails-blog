@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  posts: one
+  zeit: 2022-07-13 23:39:14
+  text: MyString
+
+two:
+  posts: two
+  zeit: 2022-07-13 23:39:14
+  text: MyString

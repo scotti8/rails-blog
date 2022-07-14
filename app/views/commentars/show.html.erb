@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @commentar %>
+
+<div>
+  <%= link_to "Kommentar bearbeiten", edit_commentar_path(@commentar, :artikel_id => @commentar.artikel.id) %> |
+  <%= link_to "Hauptseite", root_path %>
+
+  <%= button_to "Kommentar zerstören", @commentar, method: :delete %>
+</div>
